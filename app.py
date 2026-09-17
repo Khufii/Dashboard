@@ -23,7 +23,7 @@ from utils import (
 
 
 # ============================================================
-# KONFIGURASI HALAMAN
+# KONFIGURASI
 # ============================================================
 
 st.set_page_config(
@@ -60,11 +60,21 @@ st.markdown(
     <style>
 
     /* ======================================================
-       GLOBAL
+       BACKGROUND
        ====================================================== */
 
     .stApp {
         background:
+            radial-gradient(
+                circle at 10% 10%,
+                rgba(79,138,125,0.08),
+                transparent 25%
+            ),
+            radial-gradient(
+                circle at 90% 20%,
+                rgba(211,155,50,0.08),
+                transparent 25%
+            ),
             linear-gradient(
                 135deg,
                 #FFFDF8 0%,
@@ -74,7 +84,7 @@ st.markdown(
 
     .block-container {
         max-width: 800px;
-        padding-top: 2.8rem;
+        padding-top: 2.5rem;
         padding-bottom: 3rem;
     }
 
@@ -83,22 +93,118 @@ st.markdown(
        HEADER
        ====================================================== */
 
+    .egg-animation {
+        width: 75px;
+        height: 92px;
+        margin: 0 auto 15px auto;
+        position: relative;
+
+        animation:
+            floating 3s ease-in-out infinite;
+    }
+
+    .egg-body {
+        width: 65px;
+        height: 82px;
+
+        background:
+            radial-gradient(
+                circle at 35% 25%,
+                #FFFFFF,
+                #F4EFE1 70%
+            );
+
+        border-radius: 48% 48% 45% 45%;
+
+        border: 2px solid #DDD6C5;
+
+        position: absolute;
+        left: 5px;
+        top: 5px;
+
+        box-shadow:
+            0 10px 25px rgba(33,78,74,0.12);
+    }
+
+    .egg-yolk {
+        width: 25px;
+        height: 25px;
+
+        background:
+            radial-gradient(
+                circle at 35% 30%,
+                #FFE58A,
+                #D99B2B
+            );
+
+        border-radius: 50%;
+
+        position: absolute;
+
+        left: 20px;
+        top: 34px;
+
+        box-shadow:
+            0 0 15px rgba(211,155,50,0.25);
+    }
+
+    .egg-shine {
+        width: 9px;
+        height: 14px;
+
+        background: rgba(255,255,255,0.8);
+
+        border-radius: 50%;
+
+        position: absolute;
+
+        left: 17px;
+        top: 17px;
+
+        transform: rotate(25deg);
+    }
+
+    @keyframes floating {
+
+        0%, 100% {
+            transform: translateY(0px) rotate(0deg);
+        }
+
+        50% {
+            transform: translateY(-8px) rotate(2deg);
+        }
+    }
+
+
+    /* ======================================================
+       TITLE
+       ====================================================== */
+
     h1 {
         text-align: center;
         color: #214E4A !important;
+
         font-size: 2rem !important;
         font-weight: 750 !important;
+
         letter-spacing: 1.5px;
-        margin-bottom: 0.4rem;
+
+        margin-bottom: 0.3rem;
     }
 
     .subtitle {
         text-align: center;
+
         color: #77766F;
+
         font-size: 0.94rem;
+
         line-height: 1.6;
+
         max-width: 650px;
-        margin: 0 auto 2.2rem auto;
+
+        margin:
+            0 auto 2.2rem auto;
     }
 
 
@@ -108,40 +214,59 @@ st.markdown(
 
     .section-title {
         color: #214E4A;
+
         font-size: 0.98rem;
+
         font-weight: 650;
+
         margin-top: 0.5rem;
+
         margin-bottom: 0.55rem;
     }
 
 
     /* ======================================================
-       FILE UPLOADER
+       UPLOAD
        ====================================================== */
 
     [data-testid="stFileUploader"] {
+
         background-color: #FFFFFF;
-        border: 2px dashed #B8CEC4;
+
+        border:
+            2px dashed #B8CEC4;
+
         border-radius: 14px;
+
         padding: 8px;
-        transition: all 0.2s ease;
+
+        transition:
+            all 0.25s ease;
     }
 
     [data-testid="stFileUploader"]:hover {
+
         border-color: #4F8A7D;
+
         background-color: #F8FCFA;
+
+        box-shadow:
+            0 5px 20px
+            rgba(63,128,111,0.08);
     }
 
-
-    /* ======================================================
-       UPLOAD BUTTON
-       ====================================================== */
-
     [data-testid="stFileUploader"] button {
+
         border-radius: 8px !important;
-        border: 1px solid #C9D8D1 !important;
-        background-color: #FFFFFF !important;
-        color: #214E4A !important;
+
+        border:
+            1px solid #C9D8D1 !important;
+
+        background-color:
+            #FFFFFF !important;
+
+        color:
+            #214E4A !important;
     }
 
 
@@ -150,30 +275,52 @@ st.markdown(
        ====================================================== */
 
     div[data-baseweb="select"] > div {
+
         border-radius: 9px;
+
         border-color: #C8D8D1;
+
         background-color: #FFFFFF;
     }
 
 
     /* ======================================================
-       MAIN BUTTON
+       BUTTON
        ====================================================== */
 
     .stButton > button {
+
         border-radius: 9px;
+
         border: none;
+
         background-color: #214E4A;
+
         color: #FFFFFF;
+
         font-weight: 600;
+
         min-height: 42px;
-        transition: all 0.2s ease;
+
+        transition:
+            all 0.2s ease;
+
+        box-shadow:
+            0 4px 12px
+            rgba(33,78,74,0.12);
     }
 
     .stButton > button:hover {
+
         background-color: #356F65;
+
         color: #FFFFFF;
-        border: none;
+
+        transform: translateY(-1px);
+
+        box-shadow:
+            0 6px 16px
+            rgba(33,78,74,0.18);
     }
 
 
@@ -182,10 +329,18 @@ st.markdown(
        ====================================================== */
 
     [data-testid="stImage"] {
+
         border-radius: 14px;
+
         overflow: hidden;
+
         margin-top: 1rem;
+
         margin-bottom: 1rem;
+
+        box-shadow:
+            0 5px 20px
+            rgba(33,78,74,0.07);
     }
 
 
@@ -194,43 +349,82 @@ st.markdown(
        ====================================================== */
 
     .result-card {
+
         border-radius: 14px;
-        padding: 22px;
+
+        padding: 23px;
+
         text-align: center;
+
         margin-top: 1.3rem;
+
         margin-bottom: 1.3rem;
+
+        animation:
+            resultAppear 0.5s ease;
+    }
+
+    @keyframes resultAppear {
+
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 
     .result-label {
+
         color: #72746F;
+
         font-size: 0.9rem;
+
         margin-bottom: 5px;
     }
 
     .result-value {
+
         font-size: 1.9rem;
+
         font-weight: 750;
     }
 
 
     /* ======================================================
-       METRIC CARD
+       METRIC
        ====================================================== */
 
     [data-testid="stMetric"] {
+
         background-color: #FFFFFF;
-        border: 1px solid #E2DED2;
+
+        border:
+            1px solid #E2DED2;
+
         border-radius: 12px;
+
         padding: 15px;
+
         min-height: 105px;
+
+        box-shadow:
+            0 3px 12px
+            rgba(33,78,74,0.04);
     }
 
     [data-testid="stMetricLabel"] {
+
         color: #6F756F;
     }
 
     [data-testid="stMetricValue"] {
+
         color: #214E4A;
+
         font-size: 1.35rem;
     }
 
@@ -240,10 +434,12 @@ st.markdown(
        ====================================================== */
 
     [data-testid="stProgressBar"] {
+
         margin-bottom: 5px;
     }
 
     [data-testid="stProgressBar"] > div > div {
+
         background-color: #4F8A7D;
     }
 
@@ -253,7 +449,89 @@ st.markdown(
        ====================================================== */
 
     [data-testid="stAlert"] {
+
         border-radius: 10px;
+    }
+
+
+    /* ======================================================
+       SCANNING ANIMATION
+       ====================================================== */
+
+    .scan-box {
+
+        position: relative;
+
+        height: 80px;
+
+        border-radius: 12px;
+
+        background:
+            linear-gradient(
+                135deg,
+                #EAF4EF,
+                #F8F4DF
+            );
+
+        border:
+            1px solid #C5D8CC;
+
+        overflow: hidden;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        color: #356F65;
+
+        font-weight: 600;
+
+        margin:
+            1rem 0;
+    }
+
+    .scan-line {
+
+        position: absolute;
+
+        width: 100%;
+
+        height: 2px;
+
+        background: #4F8A7D;
+
+        box-shadow:
+            0 0 10px #4F8A7D;
+
+        animation:
+            scan 1.5s linear infinite;
+    }
+
+    @keyframes scan {
+
+        0% {
+            top: 0%;
+            opacity: 0;
+        }
+
+        15% {
+            opacity: 1;
+        }
+
+        50% {
+            opacity: 1;
+        }
+
+        85% {
+            opacity: 1;
+        }
+
+        100% {
+            top: 100%;
+            opacity: 0;
+        }
     }
 
 
@@ -262,8 +540,12 @@ st.markdown(
        ====================================================== */
 
     hr {
-        border-color: #DDD9CB;
+
+        border-color:
+            #DDD9CB;
+
         margin-top: 1.5rem;
+
         margin-bottom: 1.5rem;
     }
 
@@ -289,6 +571,28 @@ st.markdown(
 @st.cache_resource(show_spinner=False)
 def get_models():
     return load_models()
+
+
+# ============================================================
+# ANIMATED EGG HEADER
+# ============================================================
+
+st.markdown(
+    """
+    <div class="egg-animation">
+
+        <div class="egg-body">
+
+            <div class="egg-shine"></div>
+
+            <div class="egg-yolk"></div>
+
+        </div>
+
+    </div>
+    """,
+    unsafe_allow_html=True
+)
 
 
 # ============================================================
@@ -355,12 +659,13 @@ if uploaded_file is not None:
 
 else:
 
-    # Tetap mengambil default agar variabel tersedia
-    storage_condition = list(MAX_SHELF_LIFE_DAYS.keys())[0]
+    storage_condition = list(
+        MAX_SHELF_LIFE_DAYS.keys()
+    )[0]
 
 
 # ============================================================
-# PREVIEW
+# PREVIEW & PROCESS
 # ============================================================
 
 if uploaded_file is not None:
@@ -373,47 +678,72 @@ if uploaded_file is not None:
         use_container_width=True
     )
 
+
     # ========================================================
-    # BUTTON PROSES
+    # PROSES
     # ========================================================
 
     process = st.button(
-        "PROSES",
+        "🔍  PROSES CITRA",
         type="primary",
         use_container_width=True
     )
 
+
     if process:
 
         # ====================================================
-        # PROSES PREDIKSI
+        # ANIMASI SCANNING
         # ====================================================
 
-        with st.spinner("Menganalisis citra..."):
+        scan_placeholder = st.empty()
 
-            try:
+        scan_placeholder.markdown(
+            """
+            <div class="scan-box">
 
-                models_dict = get_models()
+                <div class="scan-line"></div>
 
-                result = predict(
-                    models_dict,
-                    image_bytes,
-                    storage_condition
-                )
+                🔍 Menganalisis citra...
 
-            except Exception as e:
-
-                st.error(
-                    "Terjadi kesalahan saat memproses citra."
-                )
-
-                st.exception(e)
-
-                st.stop()
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
 
 
         # ====================================================
-        # HASIL PENGENALAN
+        # PREDIKSI
+        # ====================================================
+
+        try:
+
+            models_dict = get_models()
+
+            result = predict(
+                models_dict,
+                image_bytes,
+                storage_condition
+            )
+
+        except Exception as e:
+
+            scan_placeholder.empty()
+
+            st.error(
+                "Terjadi kesalahan saat memproses citra."
+            )
+
+            st.exception(e)
+
+            st.stop()
+
+
+        scan_placeholder.empty()
+
+
+        # ====================================================
+        # HASIL
         # ====================================================
 
         st.markdown(
@@ -429,6 +759,7 @@ if uploaded_file is not None:
             unsafe_allow_html=True
         )
 
+
         pred_class = result["predicted_class"]
 
         color = CLASS_COLOR.get(
@@ -443,15 +774,22 @@ if uploaded_file is not None:
 
 
         # ====================================================
-        # CLASS RESULT
+        # HASIL KELAS
         # ====================================================
 
         st.markdown(
             f"""
             <div class="result-card"
                  style="
-                    background:{background};
-                    border:1.5px solid {color};
+                    background:
+                        linear-gradient(
+                            135deg,
+                            {background},
+                            #FFFFFF
+                        );
+
+                    border:
+                        1.5px solid {color};
                  ">
 
                 <div class="result-label">
@@ -460,7 +798,9 @@ if uploaded_file is not None:
 
                 <div class="result-value"
                      style="color:{color};">
+
                     {pred_class}
+
                 </div>
 
             </div>
@@ -470,7 +810,7 @@ if uploaded_file is not None:
 
 
         # ====================================================
-        # ESTIMASI
+        # ESTIMASI UMUR SIMPAN
         # ====================================================
 
         col1, col2 = st.columns(2)
@@ -507,6 +847,7 @@ if uploaded_file is not None:
             unsafe_allow_html=True
         )
 
+
         for cname in CLASS_NAMES:
 
             prob = result["class_probs"].get(
@@ -521,12 +862,12 @@ if uploaded_file is not None:
 
 
         # ====================================================
-        # INFORMASI KONDISI
+        # INFORMASI
         # ====================================================
 
         st.caption(
-            f'Kondisi penyimpanan: {storage_condition} '
-            f'| Umur simpan maksimum: '
+            f"Kondisi penyimpanan: {storage_condition} "
+            f"| Umur simpan maksimum: "
             f'{result["max_shelf_life"]} hari'
         )
 
@@ -566,24 +907,36 @@ else:
         """
         <div style="
             height:170px;
-            border:1.5px dashed #CFCBC0;
+
+            border:
+                1.5px dashed #CFCBC0;
+
             border-radius:14px;
+
             display:flex;
+
             align-items:center;
+
             justify-content:center;
+
             color:#999999;
+
             background:#FFFDF9;
+
             margin-top:15px;
+
             margin-bottom:18px;
         ">
+
             Pratinjau citra akan tampil di sini
+
         </div>
         """,
         unsafe_allow_html=True
     )
 
     st.button(
-        "PROSES",
+        "🔍  PROSES CITRA",
         disabled=True
     )
 
@@ -596,6 +949,6 @@ if uploaded_file is not None:
 
     st.markdown("---")
 
-    if st.button("RESET"):
+    if st.button("↻  RESET"):
 
         st.rerun()
