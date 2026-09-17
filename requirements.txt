@@ -1,5 +1,5 @@
 streamlit==1.38.0
-tensorflow-cpu==2.15.0
+tensorflow-cpu>=2.15,<2.20
 xgboost==2.0.3
 numpy==1.26.4
 Pillow==10.4.0
