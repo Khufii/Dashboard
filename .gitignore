@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+.DS_Store
+models/*.h5
+models/*.json
+!models/README.md
