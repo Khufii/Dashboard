@@ -44,13 +44,6 @@ def render_header():
         "(Segar / Sedang / Menurun) dan estimasi sisa umur simpan, "
         "menggunakan model EfficientNet-B0 + XGBoost + Bayesian Optimization."
     )
-    if not models_available():
-        st.warning(
-            "⚠️ File model hasil training belum ditemukan di folder `models/`. "
-            "Aplikasi berjalan dalam **mode DEMO** (hasil acak, hanya untuk "
-            "pratinjau tampilan). Lihat README.md untuk cara memasang model asli.",
-            icon="⚠️",
-        )
 
 
 def render_sidebar():
@@ -66,7 +59,6 @@ def render_sidebar():
     st.sidebar.subheader("Tentang Sistem")
     st.sidebar.markdown(
         """
-        Sistem ini merupakan bagian dari skripsi:
 
         **"Klasifikasi dan Estimasi Umur Simpan Kuning Telur Puyuh
         Menggunakan EfficientNet-XGBoost dengan Bayesian Optimization"**
